@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: hsla(30, 82%, 15%, 0.5);
+  /* cursor: url(./seamusboop\ 64x64.png), pointer; */
+  background-image: url(./seamusboop.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  background-blend-mode: darken;
+}
+
+:root {
+  /* FONTS */
+  --main-font: "Montserrat", serif;
+  --second-font: "Poppins", serif;
+  /* FOMNT SIZE */
+  --h1-fs: clamp(16px, 10vw, 6rem);
+  --links-fs: clamp(8px, 3vw, 1.4rem);
+  /* COLORS */
+  --Second-color: rgb(164, 131, 99);
+  --font-color: rgb(229, 165, 81);
+  --hover-bg-color: rgb(165, 42, 42);
+  --section-bg: rgba(165, 42, 42, 0.5);
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+  padding: 0 24px;
+  background-color: rgb(164, 131, 99);
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: var(--second-font);
+  font-weight: 500;
+  color: var(--font-color);
+  font-size: var(--links-fs);
+  /* cursor: url(./seamusboop\ 32x32.png), pointer; */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  display: block;
+  padding: 15px 15px;
+  /* z-index: 1; */
+}
+
+nav a::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: var(--hover-bg-color);
+  width: 100%;
+  height: 10px;
+  left: -100%;
+  top: 0px;
+  transition: all 2s;
+  z-index: 99;
+}
+
+nav a:hover::before {
+  left: 100%;
+}
+
+nav a::after {
+  position: absolute;
+  content: "";
+  background-color: var(--hover-bg-color);
+  width: 100%;
+  height: 10px;
+  right: -100%;
+  top: 90%;
+  background-color: var(--font-color);
+  transition: all 2s;
+}
+
+nav a:hover::after {
+  right: 100%;
+}
+
+.nav-menu li {
+  list-style: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar {
+  width: 20px;
+  height: 3px;
+  display: none;
+  background-color: var(--font-color);
+  margin: 5px auto;
+  transition: all 0.3s ease-in;
+  color: #fff;
+  display: block;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: var(--second-font);
+  color: var(--font-color);
+  font-size: var(--h1-fs);
+  text-align: center;
+  margin: 50px;
+  animation: h1-about 2s ease 1s 1 forwards;
+}
+
+h2 {
+  font-family: var(--second-font);
+  color: var(--font-color);
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+section {
+  margin: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  align-items: center;
+  background-color: var(--section-bg);
+  width: 80%;
+  border-radius: 10px 20px 30px 40px;
+  padding: 2rem 2rem;
+}
+
+.about-me,
+.more_about-me p {
+  font-family: var(--main-font);
+  font-size: clamp(18px, 2vw, 2rem);
+  color: var(--font-color);
+  width: 70%;
+  text-align: center;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.on-rock img {
+  width: 60%;
+  height: auto;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 5px solid var(--font-color);
+}
+
+figcaption {
+  font-family: var(--second-font);
+  color: var(--font-color);
+  background-color: var(--section-bg);
+  display: inline-block;
+  width: 60%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: var(--Second-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 3;
+}
+
+#footerDateTime {
+  font-family: var(--main-font);
+  color: var(--font-color);
+}
+
+.copyright {
+  color: var(--font-color);
+  font-family: var(--main-font);
+}
+
+@media (max-width: 575px) {
+  .nav-menu {
+    position: fixed;
+    top: 100px;
+    left: 100%;
+    width: 50%;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgba(80, 47, 7, 0.7);
+    transition: all 0.3s ease-in;
+    z-index: 1;
+  }
+
+  .nav-menu a {
+    display: block;
+    position: relative;
+    cursor: url(./seamusboop\ 32x32.png), pointer;
+  }
+
+  .nav-menu a::before {
+    position: absolute;
+    display: block;
+    left: -100%;
+    top: 0;
+    height: 10px;
+    color: var(--font-color);
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(-45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(45deg);
+  }
+  .nav-menu.active {
+    left: 50%;
+  }
+
+  .hero img {
+    width: 60%;
+    height: auto;
+  }
+
+  .button {
+    margin-top: 10px;
+  }
+
+  .nav-links::before {
+    display: none;
+  }
+}
+
+@keyframes h1-about {
+  0% {
+    transform: translateY(-200%);
+    transition: 2s;
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(100%);
+    text-decoration: underline;
+  }
+}
