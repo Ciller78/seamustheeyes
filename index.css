@@ -8,6 +8,7 @@
 
 body {
   height: 100vh;
+  background-image: linear-gradient(rgb(164, 131, 99), rgb(230, 199, 168));
 }
 
 :root {
