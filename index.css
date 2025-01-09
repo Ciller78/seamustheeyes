@@ -11,8 +11,7 @@ body {
   background-image: radial-gradient(
     hsl(32, 79%, 96%),
     rgb(164, 131, 99),
-    hsl(32, 79%, 96%),
-    #333;
+    hsl(32, 79%, 96%)
   );
 }
 
