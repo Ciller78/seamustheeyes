@@ -8,7 +8,10 @@
 
 body {
   height: 100vh;
-  background-image: radial-gradient(hsl(32, 79%, 96%), rgb(164, 131, 99));
+  background-image: radial-gradient(
+    hsl(32, 79%, 96%),
+    rgb(164, 131, 99, green)
+  );
 }
 
 :root {
